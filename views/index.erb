@@ -9,3 +9,62 @@
                 <p>97 Bowling Alley Lane, Boulder CO </p>
         </body>
 </html>
+
+<% if 1 == 2 %>
+  <p>1 equals 2.</p>
+<% else %>
+  <p>1 does not equal 2.</p>
+<% end %>
+
+<> #only the second tag was sent to the browser.
+
+#You could then show different content based on whether or not a user is logged in. 
+#The following is an example of what this code may look like:
+
+<% if logged_in? %>
+  <a href="/logout">Click here to Log Out</a>
+<% else %>
+  <a href="/login">Click here to Log In</a>
+<% end %>
+
+> #We can also use iteration to manage lists of items. For instance, given an array squares = [1,4,9,16]:
+<ul>
+  <% squares = [1, 4, 9, 16] %>
+  <% squares.each do |square| %>
+    <li><%= square %></li>
+  <% end %>
+</ul>
+#Would produce:
+<ul>
+  <li>1</li>
+  <li>4</li>
+  <li>9</li>
+  <li>16</li>
+</ul>
+
+#imagine you're at Facebook and you want to print out all of the wall posts on a given profile page. 
+#They could store the posts in an array called wall_posts.
+
+<% wall_posts = ["First post!", "Second post!", "Hello, 
+it's your mother. Why don't you ever call me?"] %>
+
+>#we're defining a variable called wall_posts and assigning 
+#its value to an array of strings.
+
+#iterate through our wall_posts array and create a 
+#new <li> item for each one
+<ul>
+  <% wall_posts.each do |post| %>
+    <li><%= post %></li>
+  <% end %>
+</ul> 
+> #do not use extra > when writing code
+
+#The code above should display:
+
+<ul>
+  <li>First Post!</li>
+  <li>Second Post!</li>
+  <li>Hello, it's your mother. Why don't you ever call me?</li>
+</ul>
+#when rendered 
